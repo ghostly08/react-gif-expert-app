@@ -1,8 +1,8 @@
-
+import { getGifts } from '../helpers/getGifts';
 
 export const GifGrid = ({ category }) => {
 
-  
+  getGif( category );
 
   return (
     <>
