@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-export const AddCategory = ({ setCategories }) => { // El argumento setCategories lo cogemos de las props, visto en el web dev tools.
+export const AddCategory = ({ onNewCategory }) => { // El argumento setCategories lo cogemos de las props, visto en el web dev tools.
 
   const [inputValue, setInputValue] = useState('');
 
@@ -14,7 +14,8 @@ export const AddCategory = ({ setCategories }) => { // El argumento setCategorie
     event.preventDefault(); // En este caso lo queremos para evitar que se haga un refresh del navegador - esto es default en los forms!!
     if( inputValue.trim().length <= 1) return;
 
-    setCategories( (categories) => [ inputValue, ...categories ]);
+    //setCategories( (categories) => [ inputValue, ...categories ]);
+    onNewCategory( inputValue.trim() ) // sustituye ahora al setCtegories anterior.
     setInputValue(''); //Limpia el placeholder una vez das a intro
   }
 
